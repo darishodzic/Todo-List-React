@@ -5,6 +5,7 @@ const Form = ({
 	setInputText,
 	todos,
 	setTodos,
+	setStatus,
 }) => {
 	const inputTextHandler = (e) => {
 		setInputText(e.target.value);
@@ -21,6 +22,10 @@ const Form = ({
 			},
 		]);
 		setInputText("");
+	};
+
+	const StatusHandler = (e) => {
+		setStatus(e.target.value);
 	};
 
 	return (
@@ -40,6 +45,7 @@ const Form = ({
 			</button>
 			<div className="select">
 				<select
+					onChange={StatusHandler}
 					name="todos"
 					className="filter-todo"
 				>
